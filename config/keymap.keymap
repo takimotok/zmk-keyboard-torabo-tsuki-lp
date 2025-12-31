@@ -99,17 +99,17 @@
 //  - F keys: `Globe` + `Nx`
 //    - we might change the `Globe` key to `fn` key with `Karabiner-Elements` because ZMK can not sololy set it as the `Fn` key.
 //
-// -----------------------------------------------------------------------------------------------------------------
-// | 1     | 2     | 3     | 4     | 5     |                 | 6     | 7    | 8  | 9                   | 0         |
-// | LGUI  | LALT  | LSHFT | LCTRL |       |                 | <-    | ↓    | ↑  | ->                  | ; '       |
-// |       |       |       |       |       |       |   |     |       |      | ,  | .                   | /         |
-// | Globe | TAB   |       |       | LOWER | SPACE |   | RET | RAISE |      |    | &mt (&to 4) (&to 0) | &mo mouse |
+// -----------------------------------------------------------------------------------------------------------
+// | 1    | 2    | 3     | 4     | 5     |                 | 6     | 7    | 8  | 9                   | 0     |
+// | LGUI | LALT | LSHFT | LCTRL |       |                 | <-    | ↓    | ↑  | ->                  | ; '   |
+// |      |      |       |       |       |       |   |     |       |      | ,  | .                   | /     |
+// | ESC  | TAB  |       |       | LOWER | SPACE |   | RET | RAISE |      |    | &mt (&to 4) (&to 0) | GLOBE |
         lower_layer { // layer_2
             bindings = <
 &kp N1      &kp N2      &kp N3        &kp N4        &kp N5                       &kp N6   &kp N7        &kp N8        &kp N9      &kp N0
 &kp LGUI    &kp LALT    &kp LSHFT     &kp LCTRL     &trans                       &kp LEFT &kp DOWN      &kp UP        &kp RIGHT   &mt SINGLE_QUOTE SEMI
 &trans      &trans      &trans        &trans        &trans  &trans      &trans   &trans   &trans        &kp COMMA     &kp DOT     &kp SLASH
-&kp GLOBE   &kp TAB     &trans        &trans        &to 2   &kp SPACE   &kp RET  &to 1    &trans        &trans        &l_s 4 0    &mo 3
+&td_0       &kp TAB     &trans        &trans        &to 2   &kp SPACE   &kp RET  &to 1    &trans        &trans        &l_s 4 0    &kp GLOBE
             >;
         };
 
