@@ -138,7 +138,7 @@
 // |  ESC     |  TAB     |            |          |  LOWER   | SPACE |   | RET | RAISE |   |   | &mt (&to 4) (&to 0) | &mo mouse |
         bt_layer { // layer_4
             bindings = <
-&kp BT_SEL 0    &kp BT_SEL 1    &kp BT_SEL 2    &kp BT_SEL 3    &kp BT_SEL 4                         &trans   &trans    &trans   &trans     &trans 
+&bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                         &trans   &trans    &trans   &trans     &trans 
 &trans          &trans          &trans          &trans          &trans                               &trans   &trans    &trans   &trans     &trans
 &trans          &trans          &trans          &trans          &trans          &trans      &trans   &trans   &trans    &trans   &trans     &trans
 &td_0           &kp TAB         &trans          &trans          &to 2           &kp SPACE   &kp RET  &to 1    &trans    &trans   &l_s 4 0   &mo 3
