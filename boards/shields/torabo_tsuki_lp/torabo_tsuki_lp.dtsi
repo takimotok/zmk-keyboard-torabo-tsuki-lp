@@ -4,7 +4,7 @@
 
 / {
     chosen {
-        zmk,physical-layout = &physical_layout_l;
+        zmk,physical-layout = &physical_layout_s;
         zmk,kscan = &kscan0;
         zmk,battery = &non_lipo_battery;
     };
@@ -21,6 +21,7 @@
         >;
     };
 
+    /*
     size_m_transform: keymap_transform_1 {
         compatible = "zmk,matrix-transform";
         columns = <14>;
@@ -45,6 +46,7 @@
             RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5) RC(4,6) RC(4,13) RC(4,12) RC(4,11) RC(4,10) RC(4,9) RC(4,8) RC(4,7)
         >;
     };
+    */
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
@@ -109,6 +111,7 @@
     transform = <&size_s_transform>;
 };
 
+/*
 &physical_layout_m {
     compatible = "zmk,physical-layout";
     display-name = "M Layout";
@@ -122,6 +125,7 @@
     kscan = <&kscan0>;
     transform = <&size_l_transform>;
 };
+*/
 
 &pinctrl {
     spi0_default: spi0_default {
