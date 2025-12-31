@@ -116,16 +116,16 @@
 // mouse / media control layer
 //
 // --------------------------------------------------------------------------------------------------------------------------------------
-// | C_BRI_DEC | C_BRIGHTNESS_INC |       |       |       |                 |       |      | C_VOL_DN | C_MUTE              | C_VOL_UP  |
+// | C_BRI_DEC | C_BRIGHTNESS_INC |       |       |       |                 |       |      | C_MUTE   | C_VOL_DN            | C_VOL_UP  |
 // | LGUI      | LALT             | LSHFT | LCTRL |       |                 |       | LCLK | RCLK     | RALT                | RGUI      |
 // |           |                  |       |       |       |       |   |     |       |      |          |                     |           |
 // | ESC       | TAB              |       |       | LOWER | SPACE |   | RET | RAISE |      |          | &mt (&to 4) (&to 0) | &mo mouse |
         mm_layer { // layer_3
             bindings = <
-&kp C_BRI_DEC   &kp C_BRIGHTNESS_INC    &trans        &trans        &trans                       &trans   &trans      &kp C_VOL_DN    &kp C_MUTE  &kp C_VOL_UP
-&kp LGUI        &kp LALT                &kp LSHFT     &kp LCTRL     &trans                       &trans   &mkp LCLK   &mkp RCLK       &kp RALT    &kp RGUI
-&trans          &trans                  &trans        &trans        &trans  &trans      &trans   &trans   &trans      &trans          &trans      &trans
-&td_0           &kp TAB                 &trans        &trans        &to 2   &kp SPACE   &kp RET  &to 1    &trans      &trans          &l_s 4 0    &mo 3
+&kp C_BRI_DEC   &kp C_BRIGHTNESS_INC    &trans        &trans        &trans                       &trans   &trans      &kp C_MUTE    &kp C_VOL_DN    &kp C_VOL_UP
+&kp LGUI        &kp LALT                &kp LSHFT     &kp LCTRL     &trans                       &trans   &mkp LCLK   &mkp RCLK     &kp RALT        &kp RGUI
+&trans          &trans                  &trans        &trans        &trans  &trans      &trans   &trans   &trans      &trans        &trans          &trans
+&td_0           &kp TAB                 &trans        &trans        &to 2   &kp SPACE   &kp RET  &to 1    &trans      &trans        &l_s 4 0        &mo 3
             >;
         };
 
