@@ -41,10 +41,12 @@
             bindings = <&kp CAPSLOCK>;  
         };
 
+        // use Karabinar-Elements to define the `Fn` key with `BLOBE` instead of defining F1-F12 here
+
         bt_clear {
             bindings = <&bt BT_CLR>;
-            key-positions = <28 29>;
-            layers = <2>;
+            key-positions = <42 43>; // (&l_s 4 0) + ( &mo 3)
+            layers = <4>;
         };
     };
 
@@ -53,10 +55,10 @@
 
         layer_0 {
             bindings = <
-&kp Q       &kp W       &kp E         &kp R         &kp T                        &kp Y   &kp U         &kp I          &kp O       &kp P
-&mt LGUI A  &mt LALT S  &mt LSHFT D   &mt LCTRL F   &kp G                        &kp H   &mt RCTRL J   &mt RSHFT K    &mt RALT L  &mt RGUI SEMI
-&kp Z       &kp X       &kp C         &kp V         &kp B   &trans      &trans   &kp N   &kp M         &kp COMMA      &kp DOT     &kp SLASH
-&td_0       &kp TAB     &trans        &trans        &to 2   &kp SPACE   &kp RET  &to 1   &trans        &trans         &l_s 4 0    &mo 3
+&kp Q             &kp W   &kp E    &kp R                      &kp T                                              &kp Y                     &kp U   &kp I      &kp O    &kp P           
+&kp A             &kp S   &kp D    &kp F                      &kp G                    &trans     &trans         &kp H                     &kp J   &kp K      &kp L    &kp MINUS       
+&kp Z             &kp X   &kp C    &kp V                      &kp B                    &kp SPACE  &kp BACKSPACE  &kp N                     &kp M   &kp COMMA  &kp DOT  &kp SLASH       
+&kp LEFT_CONTROL  &gresc  &kp TAB  &mt LEFT_SHIFT LANGUAGE_2  &mt LEFT_ALT LANGUAGE_2  &mo 1      &kp ENTER      &mt RIGHT_GUI LANGUAGE_1  &trans  &trans     &mo 2    &kp SINGLE_QUOTE
             >;
         };
 
