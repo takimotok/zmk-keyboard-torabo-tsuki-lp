@@ -109,20 +109,6 @@
     transform = <&size_s_transform>;
 };
 
-&physical_layout_m {
-    compatible = "zmk,physical-layout";
-    display-name = "M Layout";
-    kscan = <&kscan0>;
-    transform = <&size_m_transform>;
-};
-
-&physical_layout_l {
-    compatible = "zmk,physical-layout";
-    display-name = "L Layout";
-    kscan = <&kscan0>;
-    transform = <&size_l_transform>;
-};
-
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
