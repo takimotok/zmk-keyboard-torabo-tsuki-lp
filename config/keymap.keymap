@@ -5,37 +5,37 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    behaviors {  
+    behaviors {
         // layer switching
-        l_s: layer_switch {  
-            compatible = "zmk,behavior-hold-tap";  
-            #binding-cells = <2>;  
-            flavor = "hold-preferred";  
-            tapping-term-ms = <200>;  
-            bindings = <&mo>, <&to>;  
-        };  
+        l_s: layer_switch {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&to>;
+        };
     };
 
     combos {
         compatible = "zmk,combos";
 
-        combo_capslock {  
-            timeout-ms = <50>;  
+        combo_capslock {
+            timeout-ms = <50>;
             key-positions = <13 16>;  // LCTRL & RCTRL (both index fingers under the `Home row mods` condition)
-            bindings = <&kp CAPSLOCK>;  
+            bindings = <&kp CAPSLOCK>;
         };
 
         // for toggle Lnaguages in macOS with Karabiner-Elements
-        combo_rgui {  
-            timeout-ms = <50>;  
+        combo_rgui {
+            timeout-ms = <50>;
             key-positions = <15 16>;  // H & J
-            bindings = <&kp RGUI>;  
+            bindings = <&kp RGUI>;
         };
 
-        combo_lgui {  
-            timeout-ms = <50>;  
+        combo_lgui {
+            timeout-ms = <50>;
             key-positions = <14 15>;  // F & G
-            bindings = <&kp LGUI>;  
+            bindings = <&kp LGUI>;
         };
 
         // use Karabinar-Elements to define the `Fn` key with `BLOBE` instead of defining F1-F12 here
