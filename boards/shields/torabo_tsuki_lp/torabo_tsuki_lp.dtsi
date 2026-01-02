@@ -21,7 +21,7 @@
         >;
     };
 
-    size_l_transform: keymap_transform_2 {
+    size_l_transform: keymap_transform_1 {
         compatible = "zmk,matrix-transform";
         columns = <14>;
         rows = <5>;
