@@ -1,5 +1,5 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 600  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 10    // default: 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 10   // default: 10
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -7,12 +7,41 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
+    behaviors {
+        // layer switching
+        l_s: layer_switch {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&to>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
+        combo_capslock {
+            timeout-ms = <50>;
+            key-positions = <13 16>;  // LCTRL & RCTRL (both index fingers under the `Home row mods` condition)
+            bindings = <&kp CAPSLOCK>;
+        };
+
+        combo_rgui {
+            timeout-ms = <50>;
+            key-positions = <15 16>;  // H & J
+            bindings = <&kp RGUI>;
+        };
+
+        combo_lgui {
+            timeout-ms = <50>;
+            key-positions = <14 15>;  // F & G
+            bindings = <&kp LGUI>;
+        };
+
         bt_clear {
             bindings = <&bt BT_CLR>;
-            key-positions = <28 29>;
+            key-positions = <42 43>;
             layers = <2>;
         };
     };
@@ -20,33 +49,77 @@
     keymap {
         compatible = "zmk,keymap";
 
+// default layer
+//
+// Adopted `Home Row Mods`
+//  - GASC ( ⌘ ⌥ ⇧ ^  ) / CSAG ( ^ ⇧ ⌥ ⌘ )
+//
+//    ---------------------------------------------------------------------------------------------------------------------------
+//  0 | Q      | W      | E       | R       | T     |                      | Y     | U       | I       |  O        | P          |  9
+// 10 | A LGUI | S LALT | D LSHFT | F LCTRL | G     |                      | H     | J RCTRL | K RSHFT | L RALT    | ; RGUI     | 19
+// 20 | Z      | X      | C       | V       | B     | ` (GRAVE) |   | DEL  | N     | M       | ,       |  .        | /          | 31
+// 32 | ESC    | TAB    |         |         | LOWER | SPACE     |   | RET  | RAISE |         |         | LAYER 3 0 | &lt 2 SQT  | 43
         layer_0 {
             bindings = <
-&trans  &trans            &trans  &trans   &trans                     &trans                                             &trans                    &trans  &trans     &trans   &trans            &trans
-&trans  &kp Q             &kp W   &kp E    &kp R                      &kp T                                              &kp Y                     &kp U   &kp I      &kp O    &kp P             &trans
-&trans  &kp A             &kp S   &kp D    &kp F                      &kp G                    &trans     &trans         &kp H                     &kp J   &kp K      &kp L    &kp MINUS         &trans
-&trans  &kp Z             &kp X   &kp C    &kp V                      &kp B                    &kp SPACE  &kp BACKSPACE  &kp N                     &kp M   &kp COMMA  &kp DOT  &kp SLASH         &trans
-&trans  &kp LEFT_CONTROL  &gresc  &kp TAB  &mt LEFT_SHIFT LANGUAGE_2  &mt LEFT_ALT LANGUAGE_2  &mo 1      &kp ENTER      &mt RIGHT_GUI LANGUAGE_1  &trans  &trans     &mo 2    &kp SINGLE_QUOTE  &trans
+&trans  &trans      &trans      &trans        &trans        &trans                        &trans    &trans        &trans        &trans      &trans          &trans
+&trans  &kp Q       &kp W       &kp E         &kp R         &kp T                         &kp Y     &kp U         &kp I         &kp O       &kp P           &trans
+&trans  &mt LGUI A  &mt LALT S  &mt LSHFT D   &mt LCTRL F   &kp G   &trans       &trans   &kp H     &mt RCTRL J   &mt RSHFT K   &mt RALT L  &mt RGUI SEMI   &trans
+&trans  &kp Z       &kp X       &kp C         &kp V         &kp B   &kp GRAVE    &kp DEL  &kp N     &kp M         &kp COMMA     &kp DOT     &kp SLASH       &trans
+&trans  &kp ESC     &kp TAB     &none         &none         &to 2   &kp SPACE    &kp RET  &to 1     &none         &none         &l_s 3 0    &lt 2 SQT       &trans
             >;
         };
 
+// raise layer
+// ---------------------------------------------------------------------------------------------------------
+// |      |      |       |       |       |                     |       |       | [ | ]         | \         |
+// | LGUI | LALT | LSHFT | LCTRL |       |                     |       | RCTRL | - | =         | ; RGUI    |
+// |      |      |       |       |       | ` (GRAVE) |   | DEL |       |       | , | .         | /         |
+// | ESC  | TAB  |       |       | LOWER | SPACE     |   | RET | RAISE |       |   | LAYER 3 0 | &lt 2 SQT |
         layer_1 {
             bindings = <
-&trans  &trans            &trans        &trans        &trans          &trans                                   &trans            &trans             &trans        &trans           &trans         &trans
-&trans  &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4    &kp NUMBER_5                             &kp NUMBER_6      &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9     &kp NUMBER_0   &trans
-&trans  &kp GRAVE         &mkp RCLK     &mkp LCLK     &mkp MCLK       &kp SINGLE_QUOTE  &trans     &trans      &kp LEFT_ARROW    &kp DOWN_ARROW     &kp UP_ARROW  &kp RIGHT_ARROW  &kp EQUAL      &trans
-&trans  &kp LEFT_ALT      &mkp RCLK     &mkp LCLK     &mkp MB3        &kp LEFT_ALT      &kp SPACE  &kp DELETE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp COLON     &kp SEMI         &kp BACKSLASH  &trans
-&trans  &kp LEFT_CONTROL  &kp LS(N9)    &kp LS(N0)    &kp LEFT_SHIFT  &mo 2             &trans     &kp RET     &kp RIGHT_GUI     &trans             &trans        &trans           &kp GRAVE      &trans
+&trans  &trans      &trans      &trans        &trans        &trans                        &trans    &trans        &trans      &trans      &trans          &trans
+&trans  &none       &none       &none         &none         &none                         &none     &none         &kp LBKT    &kp RBKT    &kp BACKSLASH   &trans
+&trans  &kp LGUI    &kp LALT    &kp LSHFT     &kp LCTRL     &none   &trans       &trans   &none     &kp RCTRL     &kp MINUS   &kp EQUAL   &mt RGUI SEMI   &trans
+&trans  &none       &none       &none         &none         &none   &kp GRAVE    &kp DEL  &none     &none         &kp COMMA   &kp DOT     &kp SLASH       &trans
+&trans  &kp ESC     &kp TAB     &none         &none         &to 2   &kp SPACE    &kp RET  &to 1     &none         &none       &l_s 3 0    &lt 2 SQT       &trans
             >;
         };
 
+// lower layer
+//
+// symbols:
+//    - !@#$%^&*(): `shift` + `number keys`
+//
+// ---------------------------------------------------------------------------------------------------------
+// | 1    | 2    | 3     | 4     | 5     |                     | 6     | 7    | 8  | 9         | 0         |
+// | LGUI | LALT | LSHFT | LCTRL |       |                     | <-    | ↓    | ↑  | ->        | ; RGUI    |
+// |      |      |       |       |       | ` (GRAVE) |   | DEL |       |      | ,  | .         | /         |
+// | ESC  | TAB  |       |       | LOWER | SPACE     |   | RET | RAISE |      |    | LAYER 3 0 | &lt 2 SQT |
         layer_2 {
             bindings = <
-&trans  &trans            &trans            &trans            &trans             &trans                                      &trans            &trans      &trans            &trans            &trans            &trans
-&trans  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)   &kp LS(NUMBER_5)                            &kp LS(NUMBER_6)  &kp LS(N7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &kp LS(NUMBER_0)  &trans
-&trans  &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3       &kp F11           &trans        &trans      &kp F1            &kp F2      &kp F3            &kp F4            &kp F5            &trans
-&trans  &trans            &trans            &kp K_MUTE        &kp C_VOLUME_DOWN  &kp C_VOLUME_UP   &kp LEFT_GUI  &kp DELETE  &kp F6            &kp F7      &kp F8            &kp F9            &kp F10           &trans
-&trans  &kp LEFT_CONTROL  &mkp RCLK         &mkp LCLK         &trans             &trans            &trans        &mkp LCLK   &mkp RCLK         &trans      &trans            &trans            &trans            &trans
+&trans  &trans      &trans      &trans        &trans        &trans                       &trans     &trans        &trans        &trans      &trans          &trans
+&trans  &kp N1      &kp N2      &kp N3        &kp N4        &kp N5                       &kp N6     &kp N7        &kp N8        &kp N9      &kp N0          &trans
+&trans  &kp LGUI    &kp LALT    &kp LSHFT     &kp LCTRL     &none   &trans      &trans   &kp LEFT   &kp DOWN      &kp UP        &kp RIGHT   &mt RGUI SEMI   &trans
+&trans  &none       &none       &none         &none         &none   &kp GRAVE   &kp DEL  &none      &none         &kp COMMA     &kp DOT     &kp SLASH       &trans
+&trans  &kp ESC     &kp TAB     &none         &none         &to 2   &kp SPACE   &kp RET  &to 1      &none         &none         &l_s 3 0    &lt 2 SQT       &trans
+            >;
+        };
+
+// media layer
+//
+// ---------------------------------------------------------------------------------------------------------------------------------------
+// | F1         | F2               | F3       | F4       | F5       |                      | F6    | F7   | F8   | F9        | F10       |
+// | BT_SEL 0   | BT_SEL 1         | BT_SEL 2 | BT_SEL 3 | BT_SEL 4 |                      |       | LCLK | RCLK |           |           |
+// | C_BRI_DEC  | C_BRIGHTNESS_INC | C_MUTE   | C_VOL_DN | C_VOL_UP | ` (GRAVE)` |   | DEL |       |      |      |           |           |
+// | ESC        | TAB              |          |          | LOWER    | SPACE      |   | RET | RAISE |      |      | LAYER 3 0 | &lt 2 SQT |
+
+        layer_3 {
+            bindings = <
+&trans  &trans          &trans                  &trans        &trans        &trans                              &trans    &trans        &trans    &trans      &trans      &trans
+&trans  &kp F1          &kp F2                  &kp F3        &kp F4        &kp F5                              &kp F6    &kp F7        &kp F8    &kp F9      &kp F10     &trans
+&trans  &bt BT_SEL 0    &bt BT_SEL 1            &bt BT_SEL 2  &bt BT_SEL 3  &bt BR_SEL 4  &trans      &trans    &none     &mkp LCLK     &mkp RCLK &none       &none       &trans
+&trans  &kp C_BRI_DEC   &kp C_BRIGHTNESS_INC    &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &kp GRAVE   &kp DEL   &none     &none         &none     &none       &none       &trans
+&trans  &kp ESC         &kp TAB                 &none         &none         &to 2         &kp SPACE   &kp RET   &to 1     &none         &none     &l_s 3 0    &lt 2 SQT   &trans
             >;
         };
     };
