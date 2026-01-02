@@ -38,7 +38,7 @@
             bindings = <&kp LGUI>;
         };
 
-        // use Karabinar-Elements to define the `Fn` key with `BLOBE` instead of defining F1-F12 here
+        // use Karabiner-Elements to define the `Fn` key with `BLOBE` instead of defining F1-F12 here
 
         bt_clear {
             bindings = <&bt BT_CLR>;
