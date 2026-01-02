@@ -5,12 +5,44 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
+    behaviors {  
+        // layer switching
+        l_s: layer_switch {  
+            compatible = "zmk,behavior-hold-tap";  
+            #binding-cells = <2>;  
+            flavor = "hold-preferred";  
+            tapping-term-ms = <200>;  
+            bindings = <&mo>, <&to>;  
+        };  
+    };
+
     combos {
         compatible = "zmk,combos";
 
+        combo_capslock {  
+            timeout-ms = <50>;  
+            key-positions = <13 16>;  // LCTRL & RCTRL (both index fingers under the `Home row mods` condition)
+            bindings = <&kp CAPSLOCK>;  
+        };
+
+        // for toggle Lnaguages in macOS with Karabiner-Elements
+        combo_rgui {  
+            timeout-ms = <50>;  
+            key-positions = <15 16>;  // H & J
+            bindings = <&kp RGUI>;  
+        };
+
+        combo_lgui {  
+            timeout-ms = <50>;  
+            key-positions = <14 15>;  // F & G
+            bindings = <&kp LGUI>;  
+        };
+
+        // use Karabinar-Elements to define the `Fn` key with `BLOBE` instead of defining F1-F12 here
+
         bt_clear {
             bindings = <&bt BT_CLR>;
-            key-positions = <28 29>;
+            key-positions = <42 43>;
             layers = <2>;
         };
     };
@@ -18,13 +50,23 @@
     keymap {
         compatible = "zmk,keymap";
 
+// default layer
+//
+// Adopted `Home Row Mods`
+//  - GASC ( ⌘ ⌥ ⇧ ^  ) / CSAG ( ^ ⇧ ⌥ ⌘ )
+//
+//    -----------------------------------------------------------------------------------------------------------------------------
+//  0 | Q      | W      | E       | R       | T     |                      | Y     | U       | I       |  O               | P          |  9
+// 10 | A LGUI | S LALT | D LSHFT | F LCTRL | G     |                      | H     | J RCTRL | K RSHFT | L RALT           | ; RGUI     | 19
+// 20 | Z      | X      | C       | V       | B     | ` (GRAVE) |   | DEL  | N     | M       | ,       |  .               | /          | 31
+// 32 | ESC    | TAB    |         |         | LOWER | SPACE     |   | RET  | RAISE |         |         | LAYER SWITCH 4 0 | &lt 2 SQT  | 43
         layer_0 {
             bindings = <
-&kp ESC    &kp N1     &kp N2    &kp N3    &kp N4    &kp N5                                                         &kp N6       &kp N7    &kp N8     &kp N9    &kp N0                &kp BSPC
-&kp TAB    &kp Q      &kp W     &kp E     &kp R     &kp T                                                          &kp Y        &kp U     &kp I      &kp O     &kp P                 &kp BSPC
-&kp CAPS   &kp A      &kp S     &kp D     &kp F     &kp G        &mkp LCLK                  &mkp RCLK              &kp H        &kp J     &kp K      &kp L     &kp SEMI              &kp SQT
-&kp LSHFT  &kp Z      &kp X     &kp C     &kp V     &kp B        &kp SPACE                  &kp RET                &kp N        &kp M     &kp COMMA  &kp DOT   &mt RIGHT_SHIFT FSLH  &kp RSHFT
-&kp LCTRL  &kp LCTRL  &kp LGUI  &kp LALT  &kp BSPC  &lt 2 SPACE  &mt LEFT_SHIFT LANGUAGE_1  &mt RSHIFT LANGUAGE_2  &lt 3 ENTER  &kp BSPC  &kp RALT   &kp RGUI  &kp RCTRL             &kp RCTRL
+&trans  &trans      &trans      &trans        &trans        &trans                        &trans    &trans        &trans        &trans      &trans          &trans
+&trans  &kp Q       &kp W       &kp E         &kp R         &kp T                         &kp Y     &kp U         &kp I         &kp O       &kp P           &trans
+&trans  &mt LGUI A  &mt LALT S  &mt LSHFT D   &mt LCTRL F   &kp G   &trans       &trans   &kp H     &mt RCTRL J   &mt RSHFT K   &mt RALT L  &mt RGUI SEMI   &trans
+&trans  &kp Z       &kp X       &kp C         &kp V         &kp B   &kp GRAVE    &kp DEL  &kp N     &kp M         &kp COMMA     &kp DOT     &kp SLASH       &trans
+&trans  &kp ESC     &kp TAB     &none         &none         &to 2   &kp SPACE    &mt RET  &to 1     &none         &none         &l_s 4 0    &lt 2 SQT       &trans
             >;
         };
 
