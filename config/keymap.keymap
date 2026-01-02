@@ -62,21 +62,26 @@
 // 32 | ESC    | TAB    |         |         | LOWER | SPACE     |   | RET  | RAISE |         |         | LAYER SWITCH 4 0 | &lt 2 SQT  | 43
         layer_0 {
             bindings = <
+&kp Q       &kp W       &kp E         &kp R         &kp T                         &kp Y     &kp U         &kp I         &kp O       &kp P
+&mt LGUI A  &mt LALT S  &mt LSHFT D   &mt LCTRL F   &kp G                         &kp H     &mt RCTRL J   &mt RSHFT K   &mt RALT L  &mt RGUI SEMI
+&kp Z       &kp X       &kp C         &kp V         &kp B   &kp GRAVE    &kp DEL  &kp N     &kp M         &kp COMMA     &kp DOT     &kp SLASH
+&kp ESC     &kp TAB     &none         &none         &to 2   &kp SPACE    &mt RET  &to 1     &none         &none         &l_s 4 0    &lt 2 SQT
+            >;
+        };
+
+// raise layer
+// --------------------------------------------------------------------------------------------------------
+// | `    |      |       |       |       |                 |       |   | [ | ]                | \         |
+// | LGUI | LALT | LSHFT | LCTRL |       |                 |       |   | - | =                | ; '       |
+// |      |      |       |       |       |       |   |     |       |   | , | .                | /         |
+// | ESC  | TAB  |       |       | LOWER | SPACE |   | RET | RAISE |   |   | LAYER SWITCH 4 0 | &lt 2 SQT |
+        layer_1 {
+            bindings = <
 &trans  &trans      &trans      &trans        &trans        &trans                        &trans    &trans        &trans        &trans      &trans          &trans
 &trans  &kp Q       &kp W       &kp E         &kp R         &kp T                         &kp Y     &kp U         &kp I         &kp O       &kp P           &trans
 &trans  &mt LGUI A  &mt LALT S  &mt LSHFT D   &mt LCTRL F   &kp G   &trans       &trans   &kp H     &mt RCTRL J   &mt RSHFT K   &mt RALT L  &mt RGUI SEMI   &trans
 &trans  &kp Z       &kp X       &kp C         &kp V         &kp B   &kp GRAVE    &kp DEL  &kp N     &kp M         &kp COMMA     &kp DOT     &kp SLASH       &trans
 &trans  &kp ESC     &kp TAB     &none         &none         &to 2   &kp SPACE    &mt RET  &to 1     &none         &none         &l_s 4 0    &lt 2 SQT       &trans
-            >;
-        };
-
-        layer_1 {
-            bindings = <
-&trans  &trans  &trans  &trans     &trans     &trans                  &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans                  &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &mkp RCLK  &mkp LCLK  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans
             >;
         };
 
