@@ -27,73 +27,73 @@
         };
 
         // for Raise layer
-        combo_capslock {
+        combo_f1 {
             bindings = <&kp F1>;
             key-positions = <13 64>;  // 1 & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
-        combo_capslock {
+        combo_f2 {
             bindings = <&kp F2>;
             key-positions = <14 64>;  // 2 & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
-        combo_capslock {
+        combo_f3 {
             bindings = <&kp F3>;
             key-positions = <15 64>;  // 3 & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
-        combo_capslock {
+        combo_f4 {
             bindings = <&kp F4>;
             key-positions = <16 64>;  // 4 & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
-        combo_capslock {
+        combo_f5 {
             bindings = <&kp F5>;
             key-positions = <17 64>;  // 5 & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
-        combo_capslock {
+        combo_f6 {
             bindings = <&kp F6>;
             key-positions = <18 64>;  // 6 & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
-        combo_capslock {
+        combo_f7 {
             bindings = <&kp F7>;
             key-positions = <19 64>;  // 7 & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
-        combo_capslock {
+        combo_f8 {
             bindings = <&kp F8>;
             key-positions = <20 64>;  // 8 & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
-        combo_capslock {
+        combo_f9 {
             bindings = <&kp F9>;
             key-positions = <21 64>;  // 9 & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
-        combo_capslock {
+        combo_f10 {
             bindings = <&kp F10>;
             key-positions = <22 64>;  // 10 & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
-        combo_capslock {
+        combo_f11 {
             bindings = <&kp F11>;
             key-positions = <25 64>;  // 11 & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
-        combo_capslock {
+        combo_f12 {
             bindings = <&kp F12>;
             key-positions = <26 64>;  // 12 & GLOBE
             layers = <1>;
