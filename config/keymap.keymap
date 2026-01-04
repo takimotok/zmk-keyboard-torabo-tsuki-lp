@@ -25,18 +25,6 @@
             bindings = <&kp CAPSLOCK>;
         };
 
-        combo_rgui {
-            timeout-ms = <50>;
-            key-positions = <15 16>;  // H & J
-            bindings = <&kp RGUI>;
-        };
-
-        combo_lgui {
-            timeout-ms = <50>;
-            key-positions = <14 15>;  // F & G
-            bindings = <&kp LGUI>;
-        };
-
         bt_clear {
             bindings = <&bt BT_CLR>;
             key-positions = <42 43>;
