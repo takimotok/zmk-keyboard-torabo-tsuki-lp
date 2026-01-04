@@ -21,7 +21,7 @@
 
         combo_capslock {
             timeout-ms = <50>;
-            key-positions = <13 16>;  // LCTRL & RCTRL (both index fingers under the `Home row mods` condition)
+            key-positions = <28 33>;  // LCTRL & RCTRL (both index fingers under the `Home row mods` condition)
             bindings = <&kp CAPSLOCK>;
         };
 
