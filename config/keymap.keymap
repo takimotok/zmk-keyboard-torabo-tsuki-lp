@@ -46,11 +46,11 @@
 &trans  &kp Q       &kp W       &kp E         &kp R         &kp T                                          &kp Y         &kp U         &kp I         &kp O       &kp P           &trans
 &trans  &mt LGUI A  &mt LALT S  &mt LSHFT D   &mt LCTRL F   &kp G        &trans             &trans         &kp H         &mt RCTRL J   &mt RSHFT K   &mt RALT L  &mt RGUI SEMI   &trans
 &trans  &kp Z       &kp X       &kp C         &kp V         &kp B        &kp GRAVE          &kp DEL        &kp N         &kp M         &kp COMMA     &kp DOT     &kp SLASH       &trans
-&trans  &kp ESC     &kp TAB     &none         &none         &lt 2 LGUI   &mt LSHFT SPACE    &mt RSHFT RET  &lt 1 RGUI    &none         &none         &mo 3       &kp SQT         &trans
+&trans  &kp ESC     &kp TAB     &none         &none         &lt 2 LGUI   &mt LSHFT SPACE    &mt RSHFT RET  &lt 1 RGUI    &none         &none         &mo 4       &lt 3 SQT       &trans
             >;
         };
 
-// raise layer
+// Raise layer
 //
 // symbols:
 //    - !@#$%^&*(): `shift` + `number keys`
@@ -64,11 +64,11 @@
 &trans  &kp N1      &kp N2      &kp N3        &kp N4        &kp N5                                        &kp N6        &kp N7        &kp N8        &kp N9      &kp N0          &trans
 &trans  &kp LGUI    &kp LALT    &kp LSHFT     &kp LCTRL     &none        &trans            &trans         &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT   &mt RGUI SEMI   &trans
 &trans  &none       &none       &none         &none         &none        &kp GRAVE         &kp DEL        &none         &none         &kp COMMA     &kp DOT     &kp SLASH       &trans
-&trans  &kp ESC     &kp TAB     &none         &none         &lt 2 LGUI   &mt LSHFT SPACE   &mt RSHFT RET  &lt 1 RGUI    &none         &none         &mo 3       &kp GLOBE       &trans
+&trans  &kp ESC     &kp TAB     &none         &none         &lt 2 LGUI   &mt LSHFT SPACE   &mt RSHFT RET  &lt 1 RGUI    &none         &none         &mo 4       &lt 3 SQT       &trans
             >;
         };
 
-// lower layer
+// Lower layer
 //
 // ----------------------------------------------------------------------
 // |   |    |   |   |     |               |     |   | [ | ]       | \   |
@@ -82,18 +82,29 @@
 &trans  &none       &none       &none         &none         &none                                          &none         &none         &kp LBKT     &kp RBKT    &kp BACKSLASH   &trans
 &trans  &kp LGUI    &kp LALT    &kp LSHFT     &kp LCTRL     &none        &trans             &trans         &none         &kp RCTRL     &kp MINUS    &kp EQUAL   &mt RGUI SEMI   &trans
 &trans  &none       &none       &none         &none         &none        &kp GRAVE          &kp DEL        &none         &none         &kp COMMA    &kp DOT     &kp SLASH       &trans
-&trans  &kp ESC     &kp TAB     &none         &none         &lt 2 LGUI   &mt LSHFT SPACE    &mt RSHFT RET  &lt 1 RGUI    &none         &none        &mo 3       &kp SQT         &trans
+&trans  &kp ESC     &kp TAB     &none         &none         &lt 2 LGUI   &mt LSHFT SPACE    &mt RSHFT RET  &lt 1 RGUI    &none         &none        &mo 4       &lt 3 SQT       &trans
             >;
         };
 
-// media layer
+// F keys / Mouse layer
         layer_3 {
             bindings = <
-&trans  &trans          &trans                  &trans        &trans        &trans                                          &trans        &trans      &trans      &trans  &trans  &trans
-&trans  &bt BT_SEL 0    &bt BT_SEL 1            &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                    &none         &none       &none       &none   &none   &trans
-&trans  &kp C_VOL_DN    &kp C_VOL_UP            &kp C_MUTE    &trans        &trans        &trans            &trans          &trans        &mkp LCLK   &mkp RCLK   &none   &none   &trans
-&trans  &kp C_BRI_DEC   &kp C_BRIGHTNESS_INC    &none         &none         &none         &kp GRAVE         &kp DEL         &none         &none       &none       &none   &none   &trans
-&trans  &kp ESC         &kp TAB                 &none         &none         &lt 2 LGUI    &mt LSHFT SPACE   &mt RSHFT RET   &lt 1 RGUI    &none       &none       &mo 3   &none   &trans
+&trans  &trans      &trans      &trans        &trans        &trans                                        &trans        &trans          &trans        &trans      &trans      &trans
+&trans  &kp F1      &kp F2      &kp F3        &kp F4        &kp F5                                        &kp F6        &kp F7          &kp F8        &kp F9      &kp F0      &trans
+&trans  &kp LGUI    &kp LALT    &kp LSHFT     &kp LCTRL     &none        &trans            &trans         &none         &mkp LCLK       &mkp RCLK     &none       &none       &trans
+&trans  &none       &none       &none         &none         &none        &kp GRAVE         &kp DEL        &none         &msc SCRL_DOWN  &msc SCRL_UP  &none       &none       &trans
+&trans  &kp ESC     &kp TAB     &none         &none         &lt 2 LGUI   &mt LSHFT SPACE   &mt RSHFT RET  &lt 1 RGUI    &none           &none         &mo 4       &lt 3 SQT   &trans
+            >;
+        };
+
+// Media layer
+        layer_4 {
+            bindings = <
+&trans  &trans          &trans                  &trans        &trans        &trans                                          &trans        &trans      &trans      &trans  &trans      &trans
+&trans  &bt BT_SEL 0    &bt BT_SEL 1            &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                    &none         &none       &none       &none   &none       &trans
+&trans  &kp C_VOL_DN    &kp C_VOL_UP            &kp C_MUTE    &trans        &trans        &trans            &trans          &trans        &none       &none       &none   &none       &trans
+&trans  &kp C_BRI_DEC   &kp C_BRIGHTNESS_INC    &none         &none         &none         &kp GRAVE         &kp DEL         &none         &none       &none       &none   &none       &trans
+&trans  &kp ESC         &kp TAB                 &none         &none         &lt 2 LGUI    &mt LSHFT SPACE   &mt RSHFT RET   &lt 1 RGUI    &none       &none       &mo 4   &lt 3 SQT   &trans
             >;
         };
     };
