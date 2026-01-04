@@ -27,8 +27,8 @@
 
         bt_clear {
             bindings = <&bt BT_CLR>;
-            key-positions = <42 43>;
-            layers = <2>;
+            key-positions = <63 64>; // (&mo 4) & (&lt 3 SQT)
+            layers = <4>;
         };
     };
 
