@@ -19,12 +19,88 @@
     combos {
         compatible = "zmk,combos";
 
+        // for default layer
         combo_capslock {
-            timeout-ms = <50>;
-            key-positions = <28 33>;  // LCTRL & RCTRL (both index fingers under the `Home row mods` condition)
             bindings = <&kp CAPSLOCK>;
+            key-positions = <28 33>;  // LCTRL & RCTRL (both index fingers under the `Home row mods` condition)
+            timeout-ms = <50>;
         };
 
+        // for Raise layer
+        combo_capslock {
+            bindings = <&kp F1>;
+            key-positions = <13 64>;  // 1 & GLOBE
+            layers = <1>;
+            timeout-ms = <50>;
+        };
+        combo_capslock {
+            bindings = <&kp F2>;
+            key-positions = <14 64>;  // 2 & GLOBE
+            layers = <1>;
+            timeout-ms = <50>;
+        };
+        combo_capslock {
+            bindings = <&kp F3>;
+            key-positions = <15 64>;  // 3 & GLOBE
+            layers = <1>;
+            timeout-ms = <50>;
+        };
+        combo_capslock {
+            bindings = <&kp F4>;
+            key-positions = <16 64>;  // 4 & GLOBE
+            layers = <1>;
+            timeout-ms = <50>;
+        };
+        combo_capslock {
+            bindings = <&kp F5>;
+            key-positions = <17 64>;  // 5 & GLOBE
+            layers = <1>;
+            timeout-ms = <50>;
+        };
+        combo_capslock {
+            bindings = <&kp F6>;
+            key-positions = <18 64>;  // 6 & GLOBE
+            layers = <1>;
+            timeout-ms = <50>;
+        };
+        combo_capslock {
+            bindings = <&kp F7>;
+            key-positions = <19 64>;  // 7 & GLOBE
+            layers = <1>;
+            timeout-ms = <50>;
+        };
+        combo_capslock {
+            bindings = <&kp F8>;
+            key-positions = <20 64>;  // 8 & GLOBE
+            layers = <1>;
+            timeout-ms = <50>;
+        };
+        combo_capslock {
+            bindings = <&kp F9>;
+            key-positions = <21 64>;  // 9 & GLOBE
+            layers = <1>;
+            timeout-ms = <50>;
+        };
+        combo_capslock {
+            bindings = <&kp F10>;
+            key-positions = <22 64>;  // 10 & GLOBE
+            layers = <1>;
+            timeout-ms = <50>;
+        };
+        combo_capslock {
+            bindings = <&kp F11>;
+            key-positions = <25 64>;  // 11 & GLOBE
+            layers = <1>;
+            timeout-ms = <50>;
+        };
+        combo_capslock {
+            bindings = <&kp F12>;
+            key-positions = <26 64>;  // 12 & GLOBE
+            layers = <1>;
+            timeout-ms = <50>;
+        };
+
+        // for media layer
         bt_clear {
             bindings = <&bt BT_CLR>;
             key-positions = <63 64>; // (&mo 4) & (&lt 3 SQT)
@@ -56,7 +132,7 @@
 //    - !@#$%^&*(): `shift` + `number keys`
 //
 // F keys: `GLOBE` + `NX`
-//    - might neea Karabiner-Element to remap `GLOBE` to `Function` 
+//    - @see: combo section
 //
         layer_1 {
             bindings = <
@@ -64,7 +140,7 @@
 &trans  &kp N1      &kp N2      &kp N3        &kp N4        &kp N5                                        &kp N6        &kp N7        &kp N8        &kp N9      &kp N0          &trans
 &trans  &kp LGUI    &kp LALT    &kp LSHFT     &kp LCTRL     &none        &trans            &trans         &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT   &mt RGUI SEMI   &trans
 &trans  &none       &none       &none         &none         &none        &kp GRAVE         &kp DEL        &none         &none         &kp COMMA     &kp DOT     &kp SLASH       &trans
-&trans  &kp ESC     &kp TAB     &none         &none         &lt 2 LGUI   &mt LSHFT SPACE   &mt RSHFT RET  &lt 1 RGUI    &none         &none         &mo 4       &lt 3 SQT       &trans
+&trans  &kp ESC     &kp TAB     &none         &none         &lt 2 LGUI   &mt LSHFT SPACE   &mt RSHFT RET  &lt 1 RGUI    &none         &none         &mo 4       &kp GLOBE       &trans
             >;
         };
 
