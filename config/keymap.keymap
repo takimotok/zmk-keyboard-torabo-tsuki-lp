@@ -70,11 +70,11 @@
 
 // Lower layer
 //
-// ----------------------------------------------------------------------
-// |   |    |   |   |     |               |     |   | [ | ]       | \   |
-// | ⌘ | ⎇  | ⇧ | ⌃ |     |               |     | ⌃ | - | =       | ; ⌘ |
-// |   |    |   |   |     | `   |   | ⌫   |     |   | , | .       | /   |
-// | ⎋ | ⇥  |   |   | ▽ ⌘ | ⇧ ␣ |   | ⇧ ⏎ | ▲ ⌘ |   |   | LAYER 3 | '   |
+// ----------------------------------------------------------------------------
+// |   |    |   |   |     |               |     |   | [ | ]       | \         |
+// | ⌘ | ⎇  | ⇧ | ⌃ |     |               |     | ⌃ | - | =       | ; ⌘       |
+// |   |    |   |   |     | `   |   | ⌫   |     |   | , | .       | /         |
+// | ⎋ | ⇥  |   |   | ▽ ⌘ | ⇧ ␣ |   | ⇧ ⏎ | ▲ ⌘ |   |   | LAYER 4 | LAYER 3 ' |
 //
         layer_2 {
             bindings = <
@@ -89,11 +89,11 @@
 // F keys / Mouse layer
         layer_3 {
             bindings = <
-&trans  &trans      &trans      &trans        &trans        &trans                                        &trans        &trans          &trans        &trans      &trans      &trans
-&trans  &kp F1      &kp F2      &kp F3        &kp F4        &kp F5                                        &kp F6        &kp F7          &kp F8        &kp F9      &kp F0      &trans
-&trans  &kp LGUI    &kp LALT    &kp LSHFT     &kp LCTRL     &none        &trans            &trans         &none         &mkp LCLK       &mkp RCLK     &none       &none       &trans
-&trans  &none       &none       &none         &none         &none        &kp GRAVE         &kp DEL        &none         &msc SCRL_DOWN  &msc SCRL_UP  &none       &none       &trans
-&trans  &kp ESC     &kp TAB     &none         &none         &lt 2 LGUI   &mt LSHFT SPACE   &mt RSHFT RET  &lt 1 RGUI    &none           &none         &mo 4       &lt 3 SQT   &trans
+&trans  &trans        &trans        &trans        &trans        &trans                                        &trans        &trans          &trans        &trans      &trans      &trans
+&trans  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                                        &kp F6        &kp F7          &kp F8        &kp F9      &kp F10     &trans
+&trans  &mt LGUI F11  &mt LALT F12  &kp LSHFT     &kp LCTRL     &none        &trans            &trans         &none         &mkp LCLK       &mkp RCLK     &none       &none       &trans
+&trans  &none         &none         &none         &none         &none        &kp GRAVE         &kp DEL        &none         &msc SCRL_DOWN  &msc SCRL_UP  &none       &none       &trans
+&trans  &kp ESC       &kp TAB       &none         &none         &lt 2 LGUI   &mt LSHFT SPACE   &mt RSHFT RET  &lt 1 RGUI    &none           &none         &mo 4       &lt 3 SQT   &trans
             >;
         };
 
