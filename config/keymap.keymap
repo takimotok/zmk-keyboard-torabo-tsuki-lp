@@ -162,7 +162,7 @@
             bindings = <
 &trans  &trans      &trans      &trans        &trans        &trans                                        &trans        &trans        &trans        &trans      &trans          &trans
 &trans  &kp N1      &kp N2      &kp N3        &kp N4        &kp N5                                        &kp N6        &kp N7        &kp N8        &kp N9      &kp N0          &trans
-&trans  &kp LGUI    &kp LALT    &kp LSHFT     &kp LCTRL     &none        &trans            &trans         &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT   &mt RGUI SEMI   &trans
+&trans  &kp LGUI    &kp LALT    &kp LSHFT     &kp LCTRL     &none        &trans            &trans         &none         &kp RCTRL     &kp RSHFT     &kp RALT    &mt RGUI SEMI   &trans
 &trans  &none       &none       &none         &none         &none        &kp GRAVE         &kp BSPC       &none         &none         &kp COMMA     &kp DOT     &kp SLASH       &trans
 &trans  &kp ESC     &kp TAB     &none         &none         &lt 2 LGUI   &mt LSHFT SPACE   &mt RSHFT RET  &lt 1 RGUI    &none         &none         &mo 4       &kp GLOBE       &trans
             >;
@@ -189,11 +189,11 @@
 // F keys / Mouse layer
         layer_3 {
             bindings = <
-&trans  &trans        &trans        &trans        &trans          &trans                                        &trans        &trans          &trans        &trans      &trans      &trans
-&trans  &kp F1        &kp F2        &kp F3        &kp F4          &kp F5                                        &kp F6        &kp F7          &kp F8        &kp F9      &kp F10     &trans
-&trans  &mt LGUI F11  &mt LALT F12  &mkp RCLK     &mkp LCLK       &none        &trans            &trans         &none         &mkp LCLK       &mkp RCLK     &none       &none       &trans
-&trans  &none         &none         &msc SCRL_UP  &msc SCRL_DOWN  &none        &kp GRAVE         &kp BSPC       &none         &msc SCRL_DOWN  &msc SCRL_UP  &none       &none       &trans
-&trans  &kp ESC       &kp TAB       &none         &none           &lt 2 LGUI   &mt LSHFT SPACE   &mt RSHFT RET  &lt 1 RGUI    &none           &none         &mo 4       &lt 3 SQT   &trans
+&trans  &trans        &trans        &trans        &trans          &trans                                        &trans          &trans      &trans      &trans        &trans          &trans
+&trans  &kp F1        &kp F2        &kp F3        &kp F4          &kp F5                                        &kp F6          &kp F7      &kp F8      &kp F9        &kp F10         &trans
+&trans  &mt LGUI F11  &mt LALT F12  &mkp RCLK     &mkp LCLK       &none        &trans            &trans         &kp LEFT        &kp DOWN    &kp UP      &kp RIGHT     &mt RGUI SEMI   &trans
+&trans  &msc SCRL_UP  &msc RCLK     &msc LCLK     &msc SCRL_DOWN  &none        &kp GRAVE         &kp BSPC       &msc SCRL_DOWN  &msc LCLK   &msc RCTRL  &msc SCRL_UP  &none           &trans
+&trans  &kp ESC       &kp TAB       &none         &none           &lt 2 LGUI   &mt LSHFT SPACE   &mt RSHFT RET  &lt 1 RGUI      &none       &none       &mo 4         &lt 3 SQT       &trans
             >;
         };
 
