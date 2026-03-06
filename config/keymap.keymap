@@ -53,11 +53,12 @@
             timeout-ms = <50>;
         };
 
-        combo_delete {  
-            bindings = <&kp DELETE>;  
-            key-positions = <27 45>; // d & BACKSPACE (`shift + backspace` under th `Home row mods` condition)
-            timeout-ms = <50>;  
-        };  
+        // could't work
+        /* combo_delete {   */
+        /*     bindings = <&kp DELETE>;   */
+        /*     key-positions = <27 45>; // d & BACKSPACE (`shift + backspace` under th `Home row mods` condition) */
+        /*     timeout-ms = <50>;   */
+        /* };   */
 
         // for Raise layer
         combo_f1 {
