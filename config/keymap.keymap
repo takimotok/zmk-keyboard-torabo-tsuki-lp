@@ -7,6 +7,16 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
+// cf.) boards/shields/torabo_tsuki_lp/torabo_tsuki_lp_layouts.dtsi
+//
+//  [ 0]  [ 1]  [ 2]  [ 3]  [ 4]      |       [ 5]  [ 6]  [ 7]  [ 8]  [ 9]  <- Q列
+// 
+//  [10]  [11]  [12]  [13]  [14]      |       [15]  [16]  [17]  [18]  [19]  <- ホーム列
+// 
+//  [20]  [21]  [22]  [23]  [24] [25] | [26]  [27]  [28]  [29]  [30]  [31]  <- Z列
+// 
+//  [32]  [33]  [34]  [35]  [36] [37] | [38]  [39]  [40]  [41]  [42]  [43]  <- 最下段
+
 / {
     behaviors {
         // layer switching
@@ -27,7 +37,7 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <34 35 36 37>; // List of keys on the right side of the keyboard
+            hold-trigger-key-positions = <16 17 18 19>; // List of keys on the right side of the keyboard
             hold-trigger-on-release;
         };
         hmr: home_row_mod_right {
@@ -38,7 +48,7 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <24 25 26 27>; // List of keys on the left side of the keyboard
+            hold-trigger-key-positions = <10 11 12 13>; // List of keys on the left side of the keyboard
             hold-trigger-on-release;
         };
     };
@@ -49,87 +59,87 @@
         // for default layer
         combo_capslock {
             bindings = <&kp CAPSLOCK>;
-            key-positions = <28 33>; // LCTRL & RCTRL (both index fingers under the `Home row mods` condition)
+            key-positions = <13 16>; // F & J (both index fingers under the `Home row mods` condition)
             timeout-ms = <50>;
         };
 
         // could't work
         /* combo_delete {   */
         /*     bindings = <&kp DELETE>;   */
-        /*     key-positions = <27 45>; // d & BACKSPACE (`shift + backspace` under th `Home row mods` condition) */
+        /*     key-positions = <12 26>; // D & BACKSPACE (`shift + backspace` under th `Home row mods` condition) */
         /*     timeout-ms = <50>;   */
         /* };   */
 
         // for Raise layer
         combo_f1 {
             bindings = <&kp F1>;
-            key-positions = <13 64>;  // 1 & GLOBE
+            key-positions = <0 43>;  // N1 & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
         combo_f2 {
             bindings = <&kp F2>;
-            key-positions = <14 64>;  // 2 & GLOBE
+            key-positions = <1 43>;  // N2 & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
         combo_f3 {
             bindings = <&kp F3>;
-            key-positions = <15 64>;  // 3 & GLOBE
+            key-positions = <2 43>;  // N3 & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
         combo_f4 {
             bindings = <&kp F4>;
-            key-positions = <16 64>;  // 4 & GLOBE
+            key-positions = <3 43>;  // N4 & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
         combo_f5 {
             bindings = <&kp F5>;
-            key-positions = <17 64>;  // 5 & GLOBE
+            key-positions = <4 43>;  // N5 & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
         combo_f6 {
             bindings = <&kp F6>;
-            key-positions = <18 64>;  // 6 & GLOBE
+            key-positions = <5 43>;  // N6 & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
         combo_f7 {
             bindings = <&kp F7>;
-            key-positions = <19 64>;  // 7 & GLOBE
+            key-positions = <6 43>;  // N7 & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
         combo_f8 {
             bindings = <&kp F8>;
-            key-positions = <20 64>;  // 8 & GLOBE
+            key-positions = <7 43>;  // N8 & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
         combo_f9 {
             bindings = <&kp F9>;
-            key-positions = <21 64>;  // 9 & GLOBE
+            key-positions = <8 43>;  // N9 & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
         combo_f10 {
             bindings = <&kp F10>;
-            key-positions = <22 64>;  // 10 & GLOBE
+            key-positions = <9 43>;  // N0 & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
         combo_f11 {
             bindings = <&kp F11>;
-            key-positions = <25 64>;  // 11 & GLOBE
+            key-positions = <10 43>;  // LGUI(A行) & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
         combo_f12 {
             bindings = <&kp F12>;
-            key-positions = <26 64>;  // 12 & GLOBE
+            key-positions = <11 43>;  // LALT(S行) & GLOBE
             layers = <1>;
             timeout-ms = <50>;
         };
@@ -137,7 +147,7 @@
         // for media layer
         bt_clear {
             bindings = <&bt BT_CLR>;
-            key-positions = <63 64>; // (&mo 4) & (&lt 3 SQT)
+            key-positions = <32 33>; // (GRAVE) & (none) // 最下段, 最左の2 key
             layers = <4>;
         };
     };
@@ -152,11 +162,10 @@
 //
         layer_0 {
             bindings = <
-&trans  &trans        &trans        &trans         &trans        &trans                                         &trans        &trans        &trans        &trans      &trans          &trans
-&trans  &kp Q         &kp W         &kp E          &kp R         &kp T                                          &kp Y         &kp U         &kp I         &kp O       &kp P           &trans
-&trans  &hml LGUI A   &hml LALT S   &hml LSHFT D   &hml LCTRL F  &kp G        &trans             &trans         &kp H         &hmr RCTRL J  &hmr RSHFT K  &hmr RALT L &hmr RGUI SEMI  &trans
-&trans  &kp Z         &kp X         &kp C          &kp V         &kp B        &kp ESC            &kp BSPC       &kp N         &kp M         &kp COMMA     &kp DOT     &kp SLASH       &trans
-&trans  &kp GRAVE     &none         &none          &kp TAB       &lt 2 LGUI   &mt LSHFT SPACE    &mt RSHFT RET  &lt 1 RGUI    &none         &none         &mo 4       &lt 3 SQT       &trans
+&kp Q         &kp W         &kp E          &kp R         &kp T                                        &kp Y        &kp U          &kp I         &kp O       &kp P
+&hml LGUI A   &hml LALT S   &hml LSHFT D   &hml LCTRL F  &kp G                                        &kp H        &hmr RCTRL J   &hmr RSHFT K  &hmr RALT L &hmr RGUI SEMI
+&kp Z         &kp X         &kp C          &kp V         &kp B        &kp ESC          &kp BSPC       &kp N        &kp M          &kp COMMA     &kp DOT     &kp SLASH
+&kp GRAVE     &none         &none          &kp TAB       &lt 2 LGUI   &mt LSHFT SPACE  &mt RSHFT RET  &lt 1 RGUI   &none          &none         &mo 4       &lt 3 SQT
             >;
         };
 
@@ -170,11 +179,10 @@
 //
         layer_1 {
             bindings = <
-&trans  &trans      &trans      &trans        &trans        &trans                                        &trans        &trans        &trans        &trans      &trans          &trans
-&trans  &kp N1      &kp N2      &kp N3        &kp N4        &kp N5                                        &kp N6        &kp N7        &kp N8        &kp N9      &kp N0          &trans
-&trans  &kp LGUI    &kp LALT    &kp LSHFT     &kp LCTRL     &none        &trans            &trans         &none         &kp RCTRL     &kp RSHFT     &kp RALT    &mt RGUI SEMI   &trans
-&trans  &none       &none       &none         &none         &none        &kp ESC           &kp BSPC       &none         &none         &kp COMMA     &kp DOT     &kp SLASH       &trans
-&trans  &kp GRAVE   &none       &none         &kp TAB       &lt 2 LGUI   &mt LSHFT SPACE   &mt RSHFT RET  &lt 1 RGUI    &none         &none         &mo 4       &kp GLOBE       &trans
+&kp N1      &kp N2      &kp N3        &kp N4        &kp N5                                      &kp N6       &kp N7      &kp N8        &kp N9      &kp N0
+&kp LGUI    &kp LALT    &kp LSHFT     &kp LCTRL     &none                                       &none        &kp RCTRL   &kp RSHFT     &kp RALT    &mt RGUI SEMI
+&none       &none       &none         &none         &none         &kp ESC         &kp BSPC      &none        &none       &kp COMMA     &kp DOT     &kp SLASH
+&kp GRAVE   &none       &none         &kp TAB       &lt 2 LGUI    &mt LSHFT SPACE &mt RSHFT RET &lt 1 RGUI   &none       &none         &mo 4       &kp GLOBE
             >;
         };
 
@@ -188,33 +196,30 @@
 //
         layer_2 {
             bindings = <
-&trans  &trans      &trans      &trans        &trans        &trans                                         &trans        &trans        &trans       &trans      &trans          &trans
-&trans  &none       &none       &none         &none         &none                                          &none         &none         &kp MINUS    &kp EQUAL   &kp BACKSLASH   &trans
-&trans  &kp LGUI    &kp LALT    &kp LSHFT     &kp LCTRL     &none        &trans             &trans         &none         &kp RCTRL     &kp LBKT     &kp RBKT    &mt RGUI SEMI   &trans
-&trans  &none       &none       &none         &none         &none        &kp ESC            &kp BSPC       &none         &none         &kp COMMA    &kp DOT     &kp SLASH       &trans
-&trans  &kp GRAVE   &none       &none         &kp TAB       &lt 2 LGUI   &mt LSHFT SPACE    &mt RSHFT RET  &lt 1 RGUI    &none         &none        &mo 4       &lt 3 SQT       &trans
+&none       &none       &none         &none         &none                                       &none        &none       &kp MINUS     &kp EQUAL   &kp BACKSLASH
+&kp LGUI    &kp LALT    &kp LSHFT     &kp LCTRL     &none                                       &none        &kp RCTRL   &kp LBKT      &kp RBKT    &mt RGUI SEMI
+&none       &none       &none         &none         &none         &kp ESC         &kp BSPC      &none        &none       &kp COMMA     &kp DOT     &kp SLASH
+&kp GRAVE   &none       &none         &kp TAB       &lt 2 LGUI    &mt LSHFT SPACE &mt RSHFT RET &lt 1 RGUI   &none       &none         &mo 4       &lt 3 SQT
             >;
         };
 
 // F keys / Mouse layer
         layer_3 {
             bindings = <
-&trans  &trans        &trans        &trans        &trans          &trans                                        &trans          &trans      &trans      &trans          &trans          &trans
-&trans  &kp F1        &kp F2        &kp F3        &kp F4          &kp F5                                        &kp F6          &kp F7      &kp F8      &kp F9          &kp F10         &trans
-&trans  &mt LGUI F11  &mt LALT F12  &kp LSHFT     &kp LCTRL       &none        &trans            &trans         &kp LEFT        &kp DOWN    &kp UP      &kp RIGHT       &mt RGUI SEMI   &trans
-&trans  &msc SCRL_UP  &mkp RCLK     &mkp LCLK     &msc SCRL_DOWN  &none        &kp ESC           &kp BSPC       &msc SCRL_UP    &mkp LCLK   &mkp RCLK   &msc SCRL_DOWN  &none           &trans
-&trans  &kp GRAVE     &none         &none         &kp TAB         &lt 2 LGUI   &mt LSHFT SPACE   &mkp MB5       &mkp MB4        &none       &none       &mo 4           &lt 3 SQT       &trans
+&kp F1        &kp F2        &kp F3        &kp F4          &kp F5                                    &kp F6       &kp F7      &kp F8      &kp F9           &kp F10
+&mt LGUI F11  &mt LALT F12  &kp LSHFT     &kp LCTRL       &none                                     &kp LEFT     &kp DOWN    &kp UP      &kp RIGHT        &mt RGUI SEMI
+&msc SCRL_UP  &mkp RCLK     &mkp LCLK     &msc SCRL_DOWN  &none         &kp ESC         &kp BSPC    &msc SCRL_UP &mkp LCLK   &mkp RCLK   &msc SCRL_DOWN   &none
+&kp GRAVE     &none         &none         &kp TAB         &lt 2 LGUI    &mt LSHFT SPACE &mkp MB5    &mkp MB4     &none       &none       &mo 4            &lt 3 SQT
             >;
         };
 
 // Media layer
         layer_4 {
             bindings = <
-&trans  &trans          &trans                &trans        &trans        &trans                                          &trans        &trans      &trans      &trans  &trans      &trans
-&trans  &bt BT_SEL 0    &bt BT_SEL 1          &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                    &none         &none       &none       &none   &none       &trans
-&trans  &kp C_VOL_DN    &kp C_VOL_UP          &kp C_MUTE    &trans        &trans        &trans            &trans          &trans        &none       &none       &none   &none       &trans
-&trans  &kp C_BRI_DEC   &kp C_BRIGHTNESS_INC  &none         &none         &none         &kp ESC           &kp BSPC        &none         &none       &none       &none   &none       &trans
-&trans  &kp GRAVE       &none                 &none         &kp TAB       &lt 2 LGUI    &mt LSHFT SPACE   &mt RSHFT RET   &lt 1 RGUI    &none       &none       &mo 4   &lt 3 SQT   &trans
+&bt BT_SEL 0    &bt BT_SEL 1          &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                &none       &none  &none  &none   &none
+&kp C_VOL_DN    &kp C_VOL_UP          &kp C_MUTE    &trans        &trans                                      &trans      &none  &none  &none   &none
+&kp C_BRI_DEC   &kp C_BRIGHTNESS_INC  &none         &none         &none         &kp ESC         &kp BSPC      &none       &none  &none  &none   &none
+&none           &none                 &none         &kp TAB       &lt 2 LGUI    &mt LSHFT SPACE &mt RSHFT RET &lt 1 RGUI  &none  &none  &mo 4   &lt 3 SQT
             >;
         };
     };
