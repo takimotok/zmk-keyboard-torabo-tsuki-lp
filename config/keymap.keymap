@@ -180,9 +180,9 @@
         layer_1 {
             bindings = <
 &kp N1      &kp N2      &kp N3        &kp N4        &kp N5                                      &kp N6       &kp N7      &kp N8        &kp N9      &kp N0
-&kp LGUI    &kp LALT    &kp LSHFT     &kp LCTRL     &none                                       &none        &kp RCTRL   &kp RSHFT     &kp RALT    &mt RGUI SEMI
-&none       &none       &none         &none         &none         &kp ESC         &kp BSPC      &none        &none       &kp COMMA     &kp DOT     &kp SLASH
-&kp GRAVE   &none       &none         &kp TAB       &lt 2 LGUI    &mt LSHFT SPACE &mt RSHFT RET &lt 1 RGUI   &none       &none         &mo 4       &kp GLOBE
+&kp LGUI    &kp LALT    &kp LSHFT     &kp LCTRL     &trans                                      &trans       &kp RCTRL   &kp RSHFT     &kp RALT    &mt RGUI SEMI
+&trans      &trans      &trans        &trans        &trans        &kp ESC         &kp BSPC      &trans       &trans      &kp COMMA     &kp DOT     &kp SLASH
+&kp GRAVE   &trans      &trans        &kp TAB       &lt 2 LGUI    &mt LSHFT SPACE &mt RSHFT RET &lt 1 RGUI   &trans      &trans        &mo 4       &kp GLOBE
             >;
         };
 
@@ -196,10 +196,10 @@
 //
         layer_2 {
             bindings = <
-&none       &none       &none         &none         &none                                       &none        &none       &kp MINUS     &kp EQUAL   &kp BACKSLASH
-&kp LGUI    &kp LALT    &kp LSHFT     &kp LCTRL     &none                                       &none        &kp RCTRL   &kp LBKT      &kp RBKT    &mt RGUI SEMI
-&none       &none       &none         &none         &none         &kp ESC         &kp BSPC      &none        &none       &kp COMMA     &kp DOT     &kp SLASH
-&kp GRAVE   &none       &none         &kp TAB       &lt 2 LGUI    &mt LSHFT SPACE &mt RSHFT RET &lt 1 RGUI   &none       &none         &mo 4       &lt 3 SQT
+&trans      &trans      &trans        &trans        &trans                                      &trans       &trans      &kp MINUS     &kp EQUAL   &kp BACKSLASH
+&kp LGUI    &kp LALT    &kp LSHFT     &kp LCTRL     &trans                                      &trans       &kp RCTRL   &kp LBKT      &kp RBKT    &mt RGUI SEMI
+&trans      &trans      &trans        &trans        &trans        &kp ESC         &kp BSPC      &trans       &trans      &kp COMMA     &kp DOT     &kp SLASH
+&kp GRAVE   &trans      &trans        &kp TAB       &lt 2 LGUI    &mt LSHFT SPACE &mt RSHFT RET &lt 1 RGUI   &trans      &trans        &mo 4       &lt 3 SQT
             >;
         };
 
@@ -207,19 +207,19 @@
         layer_3 {
             bindings = <
 &kp F1        &kp F2        &kp F3        &kp F4          &kp F5                                    &kp F6       &kp F7      &kp F8      &kp F9           &kp F10
-&mt LGUI F11  &mt LALT F12  &kp LSHFT     &kp LCTRL       &none                                     &kp LEFT     &kp DOWN    &kp UP      &kp RIGHT        &mt RGUI SEMI
-&msc SCRL_UP  &mkp RCLK     &mkp LCLK     &msc SCRL_DOWN  &none         &kp ESC         &kp BSPC    &msc SCRL_UP &mkp LCLK   &mkp RCLK   &msc SCRL_DOWN   &none
-&kp GRAVE     &none         &none         &kp TAB         &lt 2 LGUI    &mt LSHFT SPACE &mkp MB5    &mkp MB4     &none       &none       &mo 4            &lt 3 SQT
+&mt LGUI F11  &mt LALT F12  &kp LSHFT     &kp LCTRL       &trans                                    &kp LEFT     &kp DOWN    &kp UP      &kp RIGHT        &mt RGUI SEMI
+&msc SCRL_UP  &mkp RCLK     &mkp LCLK     &msc SCRL_DOWN  &trans        &kp ESC         &kp BSPC    &msc SCRL_UP &mkp LCLK   &mkp RCLK   &msc SCRL_DOWN   &trans
+&kp GRAVE     &trans        &trans        &kp TAB         &lt 2 LGUI    &mt LSHFT SPACE &mkp MB5    &mkp MB4     &trans      &trans      &mo 4            &lt 3 SQT
             >;
         };
 
 // Media layer
         layer_4 {
             bindings = <
-&bt BT_SEL 0    &bt BT_SEL 1          &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                &none       &none  &none  &none   &none
-&kp C_VOL_DN    &kp C_VOL_UP          &kp C_MUTE    &trans        &trans                                      &trans      &none  &none  &none   &none
-&kp C_BRI_DEC   &kp C_BRIGHTNESS_INC  &none         &none         &none         &kp ESC         &kp BSPC      &none       &none  &none  &none   &none
-&none           &none                 &none         &kp TAB       &lt 2 LGUI    &mt LSHFT SPACE &mt RSHFT RET &lt 1 RGUI  &none  &none  &mo 4   &lt 3 SQT
+&bt BT_SEL 0    &bt BT_SEL 1           &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                &trans      &trans   &trans  &trans  &trans
+&kp C_VOL_DN    &kp C_VOL_UP           &kp C_MUTE    &trans        &trans                                      &trans      &trans   &trans  &trans  &trans
+&kp C_BRI_DEC   &kp C_BRIGHTNESS_INC   &trans        &trans        &trans        &kp ESC         &kp BSPC      &trans      &trans   &trans  &trans  &trans
+&trans          &trans                 &trans        &kp TAB       &lt 2 LGUI    &mt LSHFT SPACE &mt RSHFT RET &lt 1 RGUI  &trans   &trans  &mo 4   &lt 3 SQT
             >;
         };
     };
