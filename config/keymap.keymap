@@ -51,6 +51,25 @@
             hold-trigger-key-positions = <10 11 12 13>; // List of keys on the left side of the keyboard
             hold-trigger-on-release;
         };
+
+        // for `Ctrl (F held)` + `;` -> `Esc`
+        semi_esc: semi_or_esc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SEMI>, <&kp ESC>;
+            mods = <(MOD_LCTL)>;
+        };
+        hmr_semi: home_row_mod_right_semi {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&semi_esc>;
+            hold-trigger-key-positions = <10 11 12 13>; // List of keys on the left side of the keyboard
+            hold-trigger-on-release;
+        };
     };
 
     combos {
@@ -60,11 +79,6 @@
         combo_capslock {
             bindings = <&kp CAPSLOCK>;
             key-positions = <13 16>; // F & J (both index fingers under the `Home row mods` condition)
-            timeout-ms = <50>;
-        };
-        combo_esc {
-            bindings = <&kp ESC>;
-            key-positions = <13 19>; // F & SEMI (`Ctrl` + `;` under the `Home row mods` condition)
             timeout-ms = <50>;
         };
 
@@ -165,10 +179,13 @@
 // Adopted `Home Row Mods`
 //  - GASC ( ⌘ ⌥ ⇧ ^  ) / CSAG ( ^ ⇧ ⌥ ⌘ )
 //
+// `hmr_semi RGUI 0`: the trailing `0` is a dummy argument for the tap side
+// (`&semi_esc` takes 0 params), required only to fill the hold-tap's
+// `#binding-cells = <2>` slot. It has no effect on the actual output.
         layer_0 {
             bindings = <
 &kp Q         &kp W         &kp E          &kp R         &kp T                                        &kp Y        &kp U          &kp I         &kp O       &kp P
-&hml LGUI A   &hml LALT S   &hml LSHFT D   &hml LCTRL F  &kp G                                        &kp H        &hmr RCTRL J   &hmr RSHFT K  &hmr RALT L &hmr RGUI SEMI
+&hml LGUI A   &hml LALT S   &hml LSHFT D   &hml LCTRL F  &kp G                                        &kp H        &hmr RCTRL J   &hmr RSHFT K  &hmr RALT L &hmr_semi RGUI 0
 &kp Z         &kp X         &kp C          &kp V         &kp B        &kp ESC          &kp BSPC       &kp N        &kp M          &kp COMMA     &kp DOT     &kp SLASH
 &kp GRAVE     &none         &none          &kp TAB       &lt 2 LGUI   &mt LSHFT SPACE  &mt RSHFT RET  &lt 1 RGUI   &none          &none         &mo 4       &lt 3 SQT
             >;
