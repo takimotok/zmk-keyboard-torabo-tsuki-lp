@@ -62,6 +62,11 @@
             key-positions = <13 16>; // F & J (both index fingers under the `Home row mods` condition)
             timeout-ms = <50>;
         };
+        combo_esc {
+            bindings = <&kp ESC>;
+            key-positions = <13 19>; // F & SEMI (`Ctrl` + `;` under the `Home row mods` condition)
+            timeout-ms = <50>;
+        };
 
         // could't work
         /* combo_delete {   */
